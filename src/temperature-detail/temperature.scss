@@ -1,0 +1,231 @@
+* {
+    box-sizing: content-box;
+}
+
+
+h1 {
+    margin: 0;
+    text-align: center;
+    position: relative;
+    left: -0.5rem;
+}
+
+h4 {
+    margin: 20px 0 16px 20px;
+    font-size: 18px;
+    font-weight: 500
+}
+
+.ph-return {
+    width: 1rem;
+    height: 0.8rem;
+}
+
+ion-content {
+    // --background: radial-gradient(#D0EDFF, transparent);
+
+    #name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3%;
+        background-color: #D0EDFF;
+        width: 100%;
+        margin-bottom: 15px;
+
+        .ph-1 {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-left: 10px;
+        }
+
+        h1 {
+            font-size: 0.8rem;
+            color: #555656;
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        .edit {
+            line-height: 10px;
+            margin-left: 7px;
+        }
+
+    }
+
+    #name:active {
+        background-color: #e3e3e3;
+    }
+
+    .title {
+        background-color: #64c3fa;
+        height: 350px;
+
+        border-radius: 0 0 50% 50%/0 0 15% 15%;
+        display: flex;
+
+        align-items: center;
+        flex-flow: column;
+
+        .text {
+            height: 3.3333rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: xx-large;
+            font-style: italic;
+            color: white;
+        }
+
+
+        .container {
+
+            .temperature-number {
+                position: absolute;
+                width: 200px;
+                height: 240px;
+                line-height: 240px;
+                text-align: center;
+                font-size: 40px;
+            }
+
+            /* 进度文字 */
+            .progress-text {
+                text-align: center;
+                font-size: 20px;
+                color: white;
+            }
+
+
+            .circle-wrap {
+                width: 200px;
+                height: 200px;
+                box-sizing: border-box;
+                position: relative;
+
+
+                .rect-left,
+                .rect-right {
+                    width: 100px;
+                    height: 200px;
+                    overflow: hidden;
+                }
+
+                .rect-left {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    .circle-left {
+                        /* 四个方向都要设置相同粗细及颜色，否则不是正圆 */
+                        border-top: 20px solid rgb(244, 105, 195);
+                        border-right: 20px solid rgb(244, 105, 195);
+                        border-bottom: 20px solid rgb(197 223 239);
+                        border-left: 20px solid rgb(197 223 239);
+                        /* 默认将进度条颜色归 0 */
+                        // transform: rotate(165deg);
+                    }
+                }
+
+                .rect-right {
+                    position: absolute;
+                    top: 0;
+                    left: 100px;
+
+                    .circle-right {
+                        border-top: 20px solid rgb(197 223 239);
+                        border-right: 20px solid rgb(197 223 239);
+                        border-bottom: 20px solid rgb(244, 105, 195);
+                        border-left: 20px solid rgb(244, 105, 195);
+                        margin-left: -100px;
+                        /* 默认将进度条颜色归 0 */
+                        // transform: rotate(45deg);
+                    }
+                }
+
+                .circle-left,
+                .circle-right {
+                    width: 160px;
+                    height: 160px;
+                    border-radius: 50%;
+                }
+
+            }
+
+        }
+
+        .time{
+            color: white;
+            margin-top: 8px;
+            font-size: 12px;
+        }
+
+
+    }
+
+    .information {
+        padding: 10px;
+        height: 300px;
+        box-sizing: border-box;
+        background: lightskyblue;
+        border-radius: 20px;
+        margin: auto;
+        width: 95%;
+
+        .title-text {
+            margin: 15px 0 0 0;
+            font-size: 24px;
+            display: inline-block;
+            color: wheat;
+            font-weight: 900;
+        }
+
+        .btn-add {
+            background: deepskyblue;
+            border-radius: 10px;
+            float: right;
+        }
+
+        .btn-add:active {
+            background-color: #64c3fa;
+        }
+
+        th
+         {
+            border-bottom: 1px solid black;
+        }
+
+        table {
+            width: 100%;
+            height: 215px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 35px;
+            background-color: antiquewhite;
+            max-height: 215px;
+            max-width: 370px;
+            display: inline-block;
+            overflow: auto;
+
+            tr {
+                :nth-child(1) {
+                    width: 165px;
+                }
+
+                :nth-child(2) {
+                    width: 135px;
+                }
+
+                :nth-child(3) {
+                    width: 70px;
+                }
+            }
+        }
+
+    }
+
+
+
+
+}

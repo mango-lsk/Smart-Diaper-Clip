@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+        <h1>Belly Warmer</h1>
+        <ion-buttons slot="start" (click)="back()">
+            <ion-icon src="svg/return.svg" class="ph-return"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="title">
+        <div class="belly-data">
+            <div class="posture">
+                <div class="data-posture">
+                    <ion-icon src="svg/humidity.svg" class="ph-sleep"></ion-icon>
+                </div>
+
+                <div class="data-text">
+                    <p class="data-title" style="color: grey;">Room Temperature</p>
+                    <p class="number" style="color: blue;">21°<span>/37.6°</span></p>
+                    <p style="color: aqua;">Belly Warmer(°C)</p>
+                </div>
+            </div>
+            <div class="time">Data update time: {{time() | date:'yyyy-MM-dd hh.mm'}}</div>
+        </div>
+    </div>
+
+    <div class="content"></div>
+    <div class="content y"></div>
+    <div class="content b"></div>
+
+</ion-content>

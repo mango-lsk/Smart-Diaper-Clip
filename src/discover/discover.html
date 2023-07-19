@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+        <h1>Device</h1>
+        <ion-buttons slot="start" (click)="back()">
+            <ion-icon src="svg/return.svg" class="ph-return"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="no-content" *ngIf="!DiscoverList.length">
+        <ion-spinner name="crescent"></ion-spinner>
+        <div>Trying to search for device...</div>
+        <p>Please get colser ti your device</p>
+    </div>
+
+    <ion-list>
+
+        <div class="devices">
+            Connectable Devices({{DiscoverList.length}})
+            <ion-spinner name="lines-sharp-small"></ion-spinner>
+        </div>
+
+        <ion-item *ngFor="let iter of DiscoverList">
+            <ion-label>
+                <ng-container [ngSwitch]="ClassOf(iter)">
+                    <ion-icon *ngSwitchCase="'diaper'" src="svg/kz.svg" class="ph-1"></ion-icon>
+                    <ion-icon *ngSwitchCase="'temperature'" src="svg/c.svg" class="ph-1"></ion-icon>
+                    <ion-icon *ngSwitchCase="'belly'" src="svg/humidity.svg" class="ph-1"></ion-icon>
+                </ng-container>
+                {{iter.Name}}
+            </ion-label>
+            <ion-checkbox slot="end" (ionChange)="Select($event, iter)"></ion-checkbox>
+        </ion-item>
+    </ion-list>
+    <ion-buttons class="btn-save" (click)="Back()">save</ion-buttons>
+</ion-content>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.005" height="31.273" viewBox="0 0 15.005 31.273">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #eec962;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #eec962;
+      }
+    </style>
+  </defs>
+  <g id="humidity" transform="translate(1.008 1)">
+    <path id="路径_5349" data-name="路径 5349" class="cls-1" d="M4643.1,2263.183a3.438,3.438,0,0,1,6.876,0v13.793l.458.344a6.5,6.5,0,1,1-7.793,0l.458-.344Z" transform="translate(-4640.044 -2259.745)"/>
+    <path id="路径_5350" data-name="路径 5350" class="cls-2" d="M4648.863,2262.491a1.079,1.079,0,1,1,2.158,0v13.386a3.238,3.238,0,1,1-2.158,0Z" transform="translate(-4643.447 -2256.408)"/>
+  </g>
+</svg>

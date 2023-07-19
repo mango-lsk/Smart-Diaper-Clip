@@ -1,0 +1,114 @@
+ion-list {
+    height: 85%;
+    overflow: scroll;
+    // background: radial-gradient(#D0EDFF, transparent);
+    
+
+    .devices {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 16px;
+
+        color: grey;
+    }
+} 
+
+ion-checkbox {
+    --background-checked: #fff;
+    --border-color-checked: #212121;
+    --checkmark-color: #212121;
+  }
+
+
+
+ion-content {
+    --background: var(--background);
+
+    .no-content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #f7f8fa;
+        z-index: 1;
+        display: flex;
+        padding-top: 50%;
+        align-items: center;
+        flex-flow: column;
+
+        ion-spinner {
+            color: #4d9bd3;
+            width: 2.6153rem;
+            height: 2.6153rem;
+        }
+
+        div {
+            font-size: 1.2rem;
+            font-family: Brandon Text;
+            font-weight: bold;
+            color: #313A3D;
+            opacity: 1;
+            margin-top: 6rem;
+            margin-bottom: 0.7667rem;
+        }
+
+        p {
+            font-size: 0.9333rem;
+            font-family: Brandon Text;
+            font-weight: 300;
+            color: #313A3D;
+            opacity: 1;
+        }
+    }
+
+}
+
+
+ion-item {
+    --padding-start: 0px !important;
+    --min-height: 65px;
+    font-weight: 500;
+
+    ion-label {
+        margin-left: 16px !important;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        .ph-1{
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+    }
+}
+
+
+h1 {
+    margin: 0;
+    text-align: center;
+    position: relative;
+    left: -0.5rem;
+}
+
+.ph-return {
+    width: 1rem;
+    height: 0.8rem;
+}
+
+.btn-save {
+    width: 60%;
+    background: rgba(216, 222, 228, .39);
+    opacity: 1;
+    border-radius: 20px;
+    justify-content: center;
+    font-size: 23px;
+    font-family: Brandon Text;
+    font-weight: 400;
+    padding: 20px;
+    margin: 7% auto 0;
+}
+
+.btn-save:active {
+    background: grey;
+    color: black;
+}

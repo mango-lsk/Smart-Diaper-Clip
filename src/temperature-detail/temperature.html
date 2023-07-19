@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-toolbar>
+        <h1>Details</h1>
+        <ion-buttons slot="start" (click)="back()">
+            <ion-icon src="svg/return.svg" class="ph-return"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="title">
+        <div id="name" (click)="EditDevice(Device)">
+            <ion-icon src="svg/c.svg" class="ph-1"></ion-icon>
+            <h1>{{Device.Name}}<span nz-icon nzType="edit" nzTheme="outline" class="edit"></span></h1>
+        </div>
+        <div class="container">
+            <div class="temperature-number">
+                {{GetThermometerValue(Device.TLV)?.Value!==undefined?GetThermometerValue(Device.TLV)?.Value:'--'}}
+                {{GetThermometerValue(Device.TLV)?.Metric}}
+            </div>
+            <div class="progress-text">50°</div>
+            <div class="circle-wrap">
+                <div class="rect-left">
+                    <div class="circle-left" [ngStyle]="{'transform': ChangeTemperatureLValue()}"></div>
+                </div>
+                <div class="rect-right">
+                    <div class="circle-right" [ngStyle]="{'transform': ChangeTemperatureRValue()}"></div>
+                </div>
+            </div>
+            <div class="progress-text">0°</div>
+        </div>
+        <div class="time">Current Time: {{times() | date:'yyyy-MM-dd hh.mm'}}</div>
+    </div>
+
+    <h4>Hostroy Information</h4>
+    <div class="information">
+        <span class="title-text">Project Temperature</span>
+        <button class="btn-add" (click)="Add()">Add</button>
+        <table width="50%" id="table">
+			<tr>
+				<th>Time</th>
+				<th>Temperaturn</th>
+				<th>Edit</th>
+			</tr>
+			
+			<tr *ngFor="let key of Arr; let idx = index" id="tr">
+				<td>{{key.time}}</td>
+				<td>{{key.temperature}}°</td>
+				<td><a (click)='del(idx)' >delete</a></td>
+			</tr>
+		</table> 
+    </div>
+</ion-content>

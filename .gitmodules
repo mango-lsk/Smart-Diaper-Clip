@@ -1,0 +1,3 @@
+[submodule "src/ultracreation"]
+	path = src/ultracreation
+	url = https://github.com/lubinx/ultracreation.git

@@ -1,0 +1,257 @@
+ion-list {
+    height: 100%;
+}
+
+
+h1 {
+    margin: 0;
+    text-align: center;
+    position: relative;
+    left: -0.5rem;
+}
+
+.ph-return {
+    width: 1rem;
+    height: 0.8rem;
+}
+
+
+
+ion-content {
+    --min-height: 3rem;
+    box-sizing: border-box;
+    text-align: center;
+    // --background: radial-gradient(#D0EDFF, transparent);
+
+    #name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3%;
+        border-bottom: #c1c2c3 1px solid;
+
+        .ph-1 {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        h1 {
+            font-size: 0.8rem;
+            color: #555656;
+            display: flex;
+            align-items: center;
+        }
+
+        .edit {
+            line-height: 10px;
+            margin-left: 7px;
+        }
+    }
+
+    #name:active {
+        background-color: #e3e3e3;
+    }
+
+    .comfortable {
+        height: 7.3333rem;
+        width: 100%;
+        background-color: #B5E3FE;
+
+
+    }
+
+    .comfortable-region {
+        margin-top: 2%;
+        height: 1rem;
+        display: flex;
+        justify-content: space-around;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            .good {
+                display: inline-block;
+                height: 100%;
+                width: 1rem;
+                background-color: #D0EDFF;
+                margin-right: 0.2174rem;
+            }
+
+            .bad {
+                display: inline-block;
+                height: 100%;
+                width: 1rem;
+                background-color: #E2121F;
+                margin-right: 0.2174rem;
+            }
+        }
+
+    }
+
+    
+
+    .h-range {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: #6c6a6a;
+        font-size: 0.6087rem;
+        background-color: white;
+        border-radius: 2.1304rem;
+        margin: 15% 0.4348rem;
+
+        .range {
+            width: 63%;
+
+            ion-range {
+                --bar-background: #c4bdbd;
+                --bar-background-active: #D0EDFF;
+                --bar-height: 0.3913rem;
+                --knob-size: 1.8261rem;
+                --knob-background: #f7f4f4;
+                --pin-background: #64c3fa;
+                --pin-color: #fff;
+                padding: 0px;
+
+
+            }
+        }
+
+        .range-number {
+            width: 35px;
+        }
+    }
+
+
+
+    .set {
+        width: 3rem;
+        position: fixed;
+        left: -13%;
+        bottom: 30%;
+        background-color: white;
+
+        .change-btn {
+            display: inline-block;
+            width: 2rem;
+            height: 1rem;
+            text-align: center;
+            line-height: 1rem;
+        }
+
+    }
+
+    .set:hover {
+        position: fixed;
+        left: 0%;
+
+    }
+
+
+    .data {
+        background-color: #64c3fa;
+        border-radius: 10% 10% 0% 0%;
+        color: white;
+        position: absolute;
+        top: 18.4783rem;
+        bottom: 0px;
+        width: 100%;
+
+        .text {
+            height: 3.3333rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: -webkit-xxx-large;
+            font-style: italic;
+            margin-bottom: 1.5217rem;
+        }
+
+        .data-t {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 1.3043rem;
+
+            .data-humidity {
+                width: 30%;
+                height: 6.5217rem;
+                border-radius: 1rem;
+                display: flex;
+                // justify-content: center;
+                align-items: center;
+                flex-flow: column;
+
+
+                .title {
+                    font-size: 18px;
+                }
+
+                div {
+                    line-height: 5.0435rem;
+
+                    .number {
+                        font-size: 2.913rem;
+                        font-weight: 900;
+                        font-family: math;
+                    }
+                }
+            }
+
+            .line {
+                width: 0;
+                height: 3.0435rem;
+                border: 0.0667rem solid #FFFFFF;
+                opacity: 1;
+                background-color: white;
+            }
+
+            .data-posture {
+                width: 30%;
+                height: 6.5217rem;
+                border-radius: 1rem;
+                display: flex;
+                align-items: center;
+                flex-flow: column;
+
+                .title {
+                    font-size: 18px;
+                }
+
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 116px;
+                    width: 100%;
+                }
+
+                .ph-sleep {
+                    width: 4.4348rem;
+                    height: 4.4348rem;
+                }
+
+                .text-sleep {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    line-height: 4.4348rem;
+                    font-size: 2.913rem;
+                    font-weight: 900;
+                    font-family: math;
+                }
+            }
+        }
+
+        .time {
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+
+    }
+
+
+}

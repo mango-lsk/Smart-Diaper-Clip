@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-toolbar>
+        <h1>Details</h1>
+        <ion-buttons slot="start" (click)="back()">
+            <ion-icon src="svg/return.svg" class="ph-return"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div id="name" (click)="EditDevice(Device)">
+        <ion-icon src="svg/kz.svg" class="ph-1"></ion-icon>
+        <h1>{{Device.Name}}<span nz-icon nzType="edit" nzTheme="outline" class="edit"></span></h1>
+    </div>
+
+    <div class="comfortable" [ngStyle]="{background:changeBackgroundColor()}">
+    </div>
+    <div class="comfortable-region" >
+       <div><span class="good"></span> comfortable</div>
+       <div><span class="bad"></span>suffer</div>
+    </div>
+
+    
+    <div class="h-range">
+        <div class="range-title">Humidity:</div>
+        <div class="range">
+            <ion-range [pin]="true" [ticks]="true"  value="{{Device.MaxHumidity}}" (ionChange)="onIonChange($event)"   (ionKnobMoveEnd)="onIonKnobMoveEnd($event)"></ion-range>
+        </div>
+        <div class="range-number">{{Device.MaxHumidity}}%</div>
+    </div>
+
+
+    <div class="data">
+        <div class="text">Baby Status</div>
+        <div class="data-t">
+            <div class="data-humidity">
+                <span class="title">Humidity({{GetHumidityValue(Device.TLV)?.Metric}})</span>
+                <div>
+                    <span class="number">{{GetHumidityValue(Device.TLV)?.Value!==undefined?GetHumidityValue(Device.TLV)?.Value:'--'}}</span>
+                </div>
+            </div>
+            <span class="line"></span>
+            <div class="data-posture">
+                <span class="title">Baby Action</span>
+                <div>
+                <ion-icon src="svg/left.svg" class="ph-sleep" *ngIf="GetPictureValue(Device.TLV)?.Value==4"></ion-icon>
+                <ion-icon src="svg/zl.svg" class="ph-sleep" *ngIf="GetPictureValue(Device.TLV)?.Value==1 || GetPictureValue(Device.TLV)?.Value==2"></ion-icon>
+                <ion-icon src="svg/yw_image.svg" class="ph-sleep" *ngIf="GetPictureValue(Device.TLV)?.Value==3"></ion-icon>
+                <ion-icon src="svg/cw2.svg" class="ph-sleep" *ngIf="GetPictureValue(Device.TLV)?.Value==5"></ion-icon>
+                <ion-icon src="svg/fw_mage.svg" class="ph-sleep" *ngIf="GetPictureValue(Device.TLV)?.Value==6"></ion-icon>
+                <span class="text-sleep" *ngIf="GetPictureValue(Device.TLV)?.Value==undefined">--</span>
+                </div>
+            </div>
+        </div>
+        <div class="time">Data update time: {{time() | date:'yyyy-MM-dd hh.mm'}}</div>
+    </div>
+
+    
+</ion-content>
+
+

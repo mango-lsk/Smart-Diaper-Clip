@@ -1,0 +1,142 @@
+<ion-header>
+    <ion-toolbar>
+        <h1>Henkel</h1>
+        <ion-buttons slot="end">
+            <ion-button (click)="DiscoverDevice()">
+                <ion-icon src="svg/look.svg" class="ph-look"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="no-content" *ngIf="!PeripheralList.length">
+        <ion-icon src="svg/nocontent.svg" class="ph-nocontent"></ion-icon>
+        <div>No content at the moment</div>
+    </div>
+
+    <ion-list>
+        <ng-container *ngFor="let iter of PeripheralList" [ngSwitch]="ClassOf(iter)">
+                <ion-item-sliding *ngSwitchCase="'diaper'" #sliding>
+                    <ion-item (click)="detail(iter)">
+                        <ion-label>
+                            <ion-icon src="svg/kz.svg" class="ph-1"></ion-icon>
+                            <h3 class="devicesname">{{iter.Name}}</h3>
+                            <div class="data-posture">
+                            <ion-icon src="svg/left.svg" class="ph-sleep" *ngIf="GetPictureValue(iter.TLV).Value==4"></ion-icon>
+                            <ion-icon src="svg/zl.svg" class="ph-sleep" *ngIf="GetPictureValue(iter.TLV).Value==1 || GetPictureValue(iter.TLV).Value==2"></ion-icon>
+                            <ion-icon src="svg/yw_image.svg" class="ph-sleep" *ngIf="GetPictureValue(iter.TLV).Value==3"></ion-icon>
+                            <ion-icon src="svg/cw2.svg" class="ph-sleep" *ngIf="GetPictureValue(iter.TLV).Value==5"></ion-icon>
+                            <ion-icon class="ph-sleep" *ngIf="GetPictureValue(iter.TLV).Value==undefined"></ion-icon>
+                            <ion-icon src="svg/fw_mage.svg" class="ph-sleep" *ngIf="GetPictureValue(iter.TLV).Value==6"></ion-icon>
+                            </div>
+                            <div class="clears"></div>
+                            <div class="progress-box">
+                                <div class="progress">
+                                    <span style="flex-grow: 1"></span>
+                                    <span style="flex-grow: 1"></span>
+                                    <span style="flex-grow: 1"></span>
+                                    <span style="flex-grow: 1"></span>
+                                </div>
+        
+                                <div class="progress-text" [ngStyle]="{'left.%':GetHumidityValue(iter.TLV).Value}">
+                                    <p>
+                                        {{GetHumidityValue(iter.TLV).Value!==undefined?GetHumidityValue(iter.TLV).Value:'--'}}
+                                        {{GetHumidityValue(iter.TLV).Metric}}
+                                    </p>
+                                    <div class="btn">
+                                        <ion-icon src="svg/water.svg" class="ph-2"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item-options>
+                        <ion-item-option (click)="RemoveDevice(iter,sliding)" class="del">
+                            删除
+                        </ion-item-option>
+                    </ion-item-options>
+                </ion-item-sliding>
+        
+                <ion-item-sliding #sliding *ngSwitchCase="'thermobond'">
+                    <ion-item (click)="Temperature(iter)">
+                        <ion-label>
+                            <ion-icon src="svg/c.svg" class="ph-1"></ion-icon>
+                            <h3 class="devicesname">{{iter.Name}}</h3>
+                            <div class="clears"></div>
+                            <div class="progress-c">
+                                <div class="progress-tem">
+                                    <span style="flex-grow: 6"></span>
+                                    <span style="flex-grow: 1"></span>
+                                    <span style="flex-grow: 1"></span>
+                                    <span style="flex-grow: 1"></span>
+                                    <span style="flex-grow: 1"></span>
+                                    <span style="flex-grow: 1"></span>
+                                    <span style="flex-grow: 1"></span>
+                                </div>
+                                
+                                <div class="progress-te-text" [ngStyle]="{'left.%':GetThermometerValue(iter.TLV).Value}">
+                                    <div class="te">
+                                        {{GetThermometerValue(iter.TLV).Value!==undefined?GetThermometerValue(iter.TLV).Value:'--'}}
+                                        {{GetThermometerValue(iter.TLV).Metric}}
+                                    </div>
+                                    <div class="btn-hu">
+                                        <ion-icon src="svg/humidity.svg" class="ph-3"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item-options>
+                        <ion-item-option (click)="RemoveDevice(iter,sliding)" class="del">
+                            删除
+                        </ion-item-option>
+                    </ion-item-options>
+                </ion-item-sliding>
+
+                <ion-item-sliding #sliding *ngSwitchCase="'belly'">
+                    <ion-item (click)="Belly(iter)">
+                        <ion-label>
+                            <ion-icon src="svg/belly.svg" class="ph-1"></ion-icon>
+                             <h3 class="devicesname">{{iter.Name}}</h3>
+                            <div class="clears"></div>
+                            <div class="progress-b">
+                                <div class="progress-belly">
+                                    <span style="flex-grow: 2"></span>
+                                    <span style="flex-grow: 1"></span>
+                                    <span style="flex-grow: 1"></span>
+                                    <span style="flex-grow: 1"></span>
+                                    <span style="flex-grow: 1"></span>
+                                </div>
+                                
+                                <div class="progress-by-text">
+                                    <div class="by">
+                                      37.6°C
+                                    </div>
+                                    <div class="btn-hu">
+                                        <ion-icon src="svg/humidity.svg" class="ph-3"></ion-icon>
+                                    </div>
+                                </div>
+            
+                                <div class="target">
+                                <div class="mark"></div>
+                                    <span>Target Tem45C</span>
+                                </div>
+                            </div>
+                        </ion-label>
+                    </ion-item>
+                    <ion-item-options>
+                        <ion-item-option (click)="RemoveDevice(iter,sliding)" class="del">
+                            删除
+                        </ion-item-option>
+                    </ion-item-options>
+                </ion-item-sliding>
+
+        </ng-container>  
+    </ion-list>
+</ion-content>
+
+
+<ion-footer>
+    
+</ion-footer>

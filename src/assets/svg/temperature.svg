@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="660" height="20" viewBox="0 0 660 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.006" y1="0.5" x2="0.987" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#adeaa0"/>
+      <stop offset="0.504" stop-color="#adeaa0"/>
+      <stop offset="0.591" stop-color="#edd92f"/>
+      <stop offset="1" stop-color="#e2121f"/>
+    </linearGradient>
+  </defs>
+  <rect id="矩形_2283" data-name="矩形 2283" class="cls-1" width="750" height="20" rx="10"/>
+</svg>

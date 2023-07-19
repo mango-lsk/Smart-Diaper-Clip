@@ -1,0 +1,57 @@
+{
+  "button": {
+    "ok": "Ok",
+    "cancel": "Cancel"
+  },
+  "hint": {
+    "e_ble_plugin": "BLE device error",
+    "e_connect_timeout": "Connect timeout",
+    "e_ota_failure": "Firmware upgrade failure",
+    "e_request_timeout": "Request timeout",
+    "open_ble": "Bluetooth activation failed, <br>please go to your settings and turn it on manually",
+    "open_location": "Location Service is needed for BLE scanning, <br>please go to your settings and turn it on manually",
+    "low_battery": "Low battery please charge it"
+  },
+  "product": {
+    "henkel.diaper": "Diaper sensor clip",
+    "henkel.thermometer": "Thermometer",
+    "henkel.heater": "Smart Sample",
+    "henkel.heater.belly": "Smart Warmer",
+    "henkel.heater.belt": "Belly warmer",
+    "henkel.heater.wipe": "Baby wipes warmer",
+    "henkel.heater.bottle": "Portable Baby-bottle",
+    "henkel.heater.vests": "Vests warmer"
+  },
+  "home_page": {
+    "title": "Henkel",
+    "no_device": "",
+    "confirm_delete": "Confirm to delete?"
+  },
+  "discover_page": {
+    "title": "find device",
+    "no_device": "No Device in the Area",
+    "searching": "Searching...",
+    "un_device": "No Device"
+  },
+  "device_page": {
+    "title": "My Device",
+    "no_device": "No Device"
+  },
+  "setting_page":{
+    "title":"Range Setting",
+    "out_range":"Out of range alert",
+    "remind": "Alert me",
+    "minmum":"Minmum",
+    "maxmum": "Minmum"
+  },
+  "rename_page": {
+    "rename": "Device name",
+    "ok": "Device name",
+    "smart_sensor": "Smart Sensor"
+  },
+  "electricity_page":{
+    "title":" Alarm",
+    "low_battery":"Low Battery",
+    "battery_remaining":"of battery remaining"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "button": {
+    "ok": "确定",
+    "cancel": "取消"
+  },
+  "hint": {
+    "e_ble_plugin": "BLE device error",
+    "e_connect_timeout": "Connect timeout",
+    "e_ota_failure": "Firmware upgrade failure",
+    "e_request_timeout": "Request timeout",
+    "open_ble": "启动蓝牙失败, <br>请打开手机设置，点击蓝牙图标手动开启",
+    "open_location": "Android手机蓝牙扫描设备需要基本定位服务, <br>请长按APP=>信息页=>权限=>设置允许，或重装在第一次使用时授权允许使用",
+    "low_battery": "设备电池电量低，请及时冲电"
+  },
+  "product": {
+    "henkel.diaper": "智能纸尿裤",
+    "henkel.thermometer": "智能体温贴",
+    "henkel.heater": "智能加热样品",
+    "henkel.heater.belly": "智能暧宝宝",
+    "henkel.heater.belt": "智能加热暖宫带",
+    "henkel.heater.wipe": "智能加热湿巾",
+    "henkel.heater.bottle": "智能恒温奶瓶",
+    "henkel.heater.vests": "智能加热马甲"
+  },
+  "home_page": {
+    "title": "Henkel",
+    "no_device": "",
+    "confirm_delete": "确认删除?"
+  },
+  "discover_page": {
+    "title": "扫描设备",
+    "no_device": "没有设备在范围内",
+    "searching": "扫描中...",
+    "un_device": "没有设备"
+  },
+  "device_page": {
+    "title": "我的设备",
+    "no_device": "没有添加设备"
+  },
+  "setting_page": {
+    "title": "设置",
+    "out_range": "超过范围",
+    "remind": "提醒我",
+    "minmum": "最小范围",
+    "maxmum": "最大范围"
+  },
+  "rename_page": {
+    "rename": "设备名",
+    "ok": "OK",
+    "smart_sensor": "智能传感器"
+  },
+  "electricity_page": {
+    "title": "警报",
+    "low_battery": "低电量",
+    "battery_remaining": "的电量剩余"
+  },
+  "warning_page": {
+    "low_battery": "低电量",
+    "battery_remaining": "的电量剩余"
+  }
+}
